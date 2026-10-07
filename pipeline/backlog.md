@@ -1,0 +1,19 @@
+# Topic backlog (broad appeal). [x] = used
+- [x] meeting-notes-to-actions: turn messy notes or transcripts into decisions, owners, deadlines
+- [ ] inbox-reply-drafter: draft polite replies in the user's tone for common email types
+- [ ] resume-tailor: tailor a resume and cover letter to a pasted job ad
+- [ ] weekly-report-writer: turn bullet updates into a manager-ready weekly report
+- [ ] sop-builder: turn a rough process description into a step-by-step SOP
+- [ ] product-description-writer: e-commerce product copy from specs
+- [ ] social-post-repurposer: one article into posts for 4 platforms
+- [ ] customer-complaint-responder: calm, policy-aware replies to complaints
+- [ ] invoice-and-quote-writer: clean quotes and invoices for freelancers
+- [ ] study-guide-maker: turn lecture notes into a study guide and quiz
+- [ ] proposal-writer: client project proposal from a short brief
+- [ ] presentation-outliner: talk outline and speaker notes from a topic
+- [ ] budget-planner: monthly personal budget from a list of expenses
+- [ ] job-interview-coach: likely questions and STAR answers for a role
+- [ ] contract-plain-english: explain a contract clause by clause (not legal advice)
+- [ ] travel-itinerary-planner: day-by-day plan from dates, budget, interests
+- [ ] youtube-script-writer: hook, outline and script for a short video
+- [ ] meal-plan-generator: weekly meal plan and shopping list
