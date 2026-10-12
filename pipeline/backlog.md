@@ -1,7 +1,7 @@
 # Topic backlog (broad appeal). [x] = used
 - [x] meeting-notes-to-actions: turn messy notes or transcripts into decisions, owners, deadlines
-- [ ] inbox-reply-drafter: draft polite replies in the user's tone for common email types
-- [ ] resume-tailor: tailor a resume and cover letter to a pasted job ad
+- [x] inbox-reply-drafter: draft polite replies in the user's tone for common email types
+- [x] resume-tailor: tailor a resume and cover letter to a pasted job ad
 - [ ] weekly-report-writer: turn bullet updates into a manager-ready weekly report
 - [ ] sop-builder: turn a rough process description into a step-by-step SOP
 - [ ] product-description-writer: e-commerce product copy from specs
