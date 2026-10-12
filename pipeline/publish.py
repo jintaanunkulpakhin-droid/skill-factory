@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Publish one skill to Gumroad. Usage: publish.py <slug> [--product-id ID] [--draft]
        publish.py --enable <product-id>   (publish an existing draft)
+       publish.py --media <slug> <product-id>   (attach cover and thumbnail)
+Run make_cover.py <slug> first: products get dist/<slug>-cover.png and -thumb.png.
 
 Reads skills/<slug>/LISTING.md, uploads dist/<slug>.zip, attaches it to the
 product (creating the product if no id is given) and publishes it.
 Needs GUMROAD_ACCESS_TOKEN in the environment. Prints JSON: id, url, published.
 Mirrors the upload flow of the official Gumroad CLI (presign, S3 PUT, complete).
 """
-import json, os, pathlib, re, sys, urllib.parse, urllib.request, uuid
+import base64, hashlib, json, os, pathlib, re, sys, urllib.parse, urllib.request, uuid
 
 API = "https://api.gumroad.com/v2"
 TOKEN = os.environ.get("GUMROAD_ACCESS_TOKEN") or sys.exit("GUMROAD_ACCESS_TOKEN not set")
@@ -59,7 +61,25 @@ def upload(path):
     return done["file_url"]
 
 
+def add_media(pid, slug):
+    """Attach dist/<slug>-cover.png as cover and dist/<slug>-thumb.png as thumbnail."""
+    base = "/products/" + urllib.parse.quote(pid, safe="")
+    for kind, path in (("covers", f"dist/{slug}-cover.png"), ("thumbnail", f"dist/{slug}-thumb.png")):
+        data = pathlib.Path(path).read_bytes()
+        md5 = base64.b64encode(hashlib.md5(data).digest()).decode()
+        blob = call("POST", "/direct_uploads", form={
+            "purpose": "media", "blob[filename]": pathlib.Path(path).name, "blob[byte_size]": len(data),
+            "blob[checksum]": md5, "blob[content_type]": "image/png"})
+        headers = dict(blob["direct_upload"].get("headers") or {})
+        headers.setdefault("Content-Type", "image/png"); headers.setdefault("Content-MD5", md5)
+        req = urllib.request.Request(blob["direct_upload"]["url"], data=data, method="PUT", headers=headers)
+        urllib.request.urlopen(req, timeout=120).close()
+        call("POST", f"{base}/{kind}", form={"signed_blob_id": blob["signed_id"]})
+
+
 def main():
+    if sys.argv[1] == "--media":
+        add_media(sys.argv[3], sys.argv[2]); print("media added"); return
     if sys.argv[1] == "--enable":
         prod = call("PUT", "/products/" + urllib.parse.quote(sys.argv[2], safe="") + "/enable")["product"]
         print(json.dumps({"id": sys.argv[2], "url": prod.get("short_url"), "published": prod.get("published")}))
@@ -77,6 +97,7 @@ def main():
     call("PUT", "/products/" + urllib.parse.quote(pid, safe=""), body={
         "tags": tags, "rich_content": rich,
         "files": [{"external_id": file_id, "url": file_url, "display_name": f"{slug}.zip"}]})
+    add_media(pid, slug)
     path = "/products/" + urllib.parse.quote(pid, safe="")
     note = None
     if "--draft" not in sys.argv:
