@@ -2,8 +2,8 @@
 - [x] meeting-notes-to-actions: turn messy notes or transcripts into decisions, owners, deadlines
 - [x] inbox-reply-drafter: draft polite replies in the user's tone for common email types
 - [x] resume-tailor: tailor a resume and cover letter to a pasted job ad
-- [ ] weekly-report-writer: turn bullet updates into a manager-ready weekly report
-- [ ] sop-builder: turn a rough process description into a step-by-step SOP
+- [x] weekly-report-writer: turn bullet updates into a manager-ready weekly report
+- [x] sop-builder: turn a rough process description into a step-by-step SOP
 - [ ] product-description-writer: e-commerce product copy from specs
 - [ ] social-post-repurposer: one article into posts for 4 platforms
 - [ ] customer-complaint-responder: calm, policy-aware replies to complaints
