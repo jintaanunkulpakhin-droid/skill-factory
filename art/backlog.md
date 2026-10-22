@@ -1,5 +1,5 @@
 # Art theme backlog. [x] = used. Seasonal themes go 3 to 6 weeks before the date.
-- [ ] loy-krathong-clipart (clipart): krathongs, lanterns, lotus, candles, river scenes (Loy Krathong, late Nov)
+- [x] loy-krathong-clipart (clipart): krathongs, lanterns, lotus, candles, river scenes (Loy Krathong, late Nov)
 - [ ] thai-new-year-clipart (clipart): fireworks, gift baskets, lucky fruits, festive flowers (Dec 31 / Jan 1)
 - [ ] thai-street-food-clipart (clipart): pad thai, mango sticky rice, som tam, satay, Thai tea, food carts
 - [ ] kranok-gold-patterns (pattern): gold kranok flame motifs on red, black, teal
