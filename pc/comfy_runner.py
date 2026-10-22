@@ -91,7 +91,7 @@ def pending_jobs():
 
 
 def kits():
-    """After a bundle is live, build the Etsy and Adobe Stock kits into the Drive folder."""
+    """After a bundle is live, build the Etsy, Adobe Stock and Dreamstime kits into the Drive folder."""
     if not DRIVE_DIR:
         return
     catalog = git("show", "origin/main:pipeline/catalog.md")
@@ -103,7 +103,7 @@ def kits():
             continue
         for script in ("art_package.py", "art_kits.py"):
             subprocess.run([sys.executable, f"pipeline/{script}", slug, str(src)], cwd=REPO, check=True)
-        for kind in ("etsy", "adobe"):
+        for kind in ("etsy", "adobe", "dreamstime"):
             shutil.copytree(REPO / "dist" / f"{slug}-{kind}", src / "kits" / kind, dirs_exist_ok=True)
         (src / "kits" / "DONE").write_text(time.strftime("%Y-%m-%d %H:%M\n"), encoding="utf-8")
         print("kits", slug, flush=True)

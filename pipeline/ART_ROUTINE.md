@@ -16,6 +16,11 @@ B. Publish each drop that has drops/<slug>/DONE and whose slug is not yet in pip
    4. `python3 pipeline/art_package.py <slug>`, then `python3 pipeline/art_publish.py <slug>`
       (uses $GUMROAD_ACCESS_TOKEN, never print it). Record the row like skills do: "live <id>",
       or "draft <id>" if "published" is false. Never rerun it for the same slug.
+   5. If PRINTIFY_API_TOKEN is set: `python3 pipeline/printify_publish.py <slug>` (a mug and a
+      tote bag from each of the first 2 images; never print the token). Save its JSON output to
+      art/<slug>/printify.json and never rerun it for a slug that has that file. A
+      "publish_error" on a Pop-Up Store product is normal (those are live once created). If
+      the token is missing or api.printify.com is blocked, skip and say so once.
 C. Queue jobs: a job is queued when art/<slug>/job.json exists but its slug has no DONE drop
    and is not in catalog.md. Until 2 jobs are queued, take the top unused theme in
    art/backlog.md, mark it [x], and write:

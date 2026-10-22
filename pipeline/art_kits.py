@@ -5,6 +5,8 @@ Run art_package.py <slug> first. Writes:
                        description, price) to paste into a new Etsy digital listing
   dist/<slug>-adobe/   one 2048px JPG per kept image + adobe_stock.csv (title,
                        keywords, category) for the Adobe Stock contributor portal
+  dist/<slug>-dreamstime/  the same JPGs + dreamstime.csv (title, description with the
+                       AI note Dreamstime requires, keywords) for its uploader
 On the ComfyUI PC, comfy_runner.py runs this after the bundle is live and copies
 both folders to the Google Drive folder.
 """
@@ -85,7 +87,17 @@ def main():
         w = csv.writer(fh)
         w.writerow(["Filename", "Title", "Keywords", "Category", "Releases"])
         w.writerows(rows)
-    print(json.dumps({"slug": slug, "etsy": str(etsy), "adobe": str(adobe), "adobe_images": len(rows)}))
+    dream = out / f"{slug}-dreamstime"
+    dream.mkdir(parents=True, exist_ok=True)
+    with open(dream / "dreamstime.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["Filename", "Title", "Description", "Keywords", "Category"])
+        for name, title, keys, _, _ in rows:
+            shutil.copy(adobe / name, dream / name)
+            w.writerow([name, title if len(title) <= 115 else title[:115].rsplit(" ", 1)[0], f"{title}. AI generated image (made with an AI image model).",
+                        keys, "AI generated illustrations"])
+    print(json.dumps({"slug": slug, "etsy": str(etsy), "adobe": str(adobe), "adobe_images": len(rows),
+                      "dreamstime": str(dream)}))
 
 
 if __name__ == "__main__":
