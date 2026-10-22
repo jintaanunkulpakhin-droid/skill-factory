@@ -1,0 +1,17 @@
+{
+ "title": "Meeting Notes to Action Items",
+ "input": "mtg w/ design + eng. ship v2 landing page fri? sara said ok if copy done. tom to do copy by wed. pricing still undecided, ask finance. bug in signup form - ken",
+ "output": [
+  "# Design + Eng sync",
+  "* Decisions",
+  "- Ship the v2 landing page Friday, if the copy is done (Sara)",
+  "* Action items",
+  "| Write landing page copy | Tom | Wed",
+  "| Fix signup form bug | Ken | [date]",
+  "| Ask finance about pricing | Unassigned | [date]",
+  "* Open questions",
+  "- Pricing is still undecided",
+  "* Follow-up message",
+  "Hi all, quick recap: Tom, copy by Wed. Ken, the signup bug. Who can ask finance about pricing?"
+ ]
+}

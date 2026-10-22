@@ -1,0 +1,18 @@
+{
+ "title": "Weekly Report Writer",
+ "input": "this week: finished onboarding emails v2, sent to 3,200 users, open rate 41%. still doing pricing page copy maybe 60%. waiting on legal for terms update. standups. helped Mai with the CRM import. next wk: start referral program",
+ "output": [
+  "# Weekly update - [Name] - [week]",
+  "* Highlights",
+  "- Onboarding emails v2 sent to 3,200 users, 41% open rate",
+  "* Done",
+  "- Onboarding emails v2 (3,200 users, 41% open rate)",
+  "- Helped Mai with the CRM import",
+  "* In progress",
+  "- Pricing page copy - about 60%",
+  "* Blocked / needs help",
+  "- Terms update - needs review from Legal by [date]",
+  "* Next week",
+  "- Start the referral program"
+ ]
+}

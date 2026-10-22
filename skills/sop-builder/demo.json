@@ -1,0 +1,18 @@
+{
+ "title": "SOP Builder",
+ "input": "ok so when an order comes in on shopee we check stock in the google sheet, if it's there we pack it, print the label from the shopee app, and drop at kerry before 4. if not in stock message the customer and offer refund or wait. oh and always photo the package before sealing",
+ "output": [
+  "# SOP: Shopee order fulfilment",
+  "* When: a new Shopee order comes in",
+  "1. Check stock in the Google Sheet.",
+  "- In stock: go to step 2.",
+  "- Not in stock: message the customer, offer a refund or a wait. [confirm: refund policy]",
+  "2. Pack the item.",
+  "3. Important: photograph the package before sealing.",
+  "4. Print the label from the Shopee app.",
+  "5. Drop the parcel at Kerry before 4 pm.",
+  "",
+  "* Open items to confirm",
+  "- Refund policy and how long a customer can wait"
+ ]
+}
