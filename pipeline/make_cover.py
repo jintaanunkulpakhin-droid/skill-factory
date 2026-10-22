@@ -2,7 +2,7 @@
 """Draw store images for a skill. Usage: make_cover.py <slug>
 
 Writes dist/<slug>-cover.png (1280x720) and dist/<slug>-thumb.png (600x600)
-from the title and hook in skills/<slug>/LISTING.md.
+from the title and hook in skills/<slug>/LISTING.md (or bundles/<slug>/).
 """
 import hashlib, pathlib, re, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -40,7 +40,10 @@ def block(draw, x, y, lines, fnt, fill, gap):
 
 
 def listing(slug):
-    text = pathlib.Path(f"skills/{slug}/LISTING.md").read_text(encoding="utf-8")
+    path = pathlib.Path(f"skills/{slug}/LISTING.md")
+    if not path.exists():
+        path = pathlib.Path(f"bundles/{slug}/LISTING.md")
+    text = path.read_text(encoding="utf-8")
     f = dict(re.findall(r"^(\w+):\s*(.*)$", text, re.M))
     title = re.sub(r"\s*\(Skill for Claude\)\s*$", "", f["title"])
     return title, f.get("hook", ""), f.get("price_usd", "")

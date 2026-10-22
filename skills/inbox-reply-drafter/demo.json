@@ -1,0 +1,19 @@
+{
+ "title": "Inbox Reply Drafter",
+ "input": "Hi, could you speak at our customer meetup on 14 Nov and also share your slides from last year?\n\nMy intent: no to talk, yes slides",
+ "output": [
+  "Hi [Name],",
+  "",
+  "Thank you for thinking of me for the customer meetup on 14 Nov.",
+  "",
+  "I won't be able to speak this time, but I'm happy to share last year's slides: [link]",
+  "",
+  "I hope the event goes well, and please keep me in mind for a future one.",
+  "",
+  "Best regards,",
+  "[Your name]",
+  "",
+  "* Shorter version",
+  "Thanks for the invite! I can't speak on 14 Nov, but here are last year's slides: [link]"
+ ]
+}

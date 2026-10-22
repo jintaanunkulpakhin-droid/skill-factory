@@ -1,0 +1,19 @@
+{
+ "title": "Resume Tailor",
+ "input": "RESUME\nStore Supervisor, 2020-2024\n- made weekly schedules for 12 staff\n- counted stock, ordered from suppliers\n- handled cash and daily reports\n\nJOB AD\nJunior Operations Coordinator. Must have: Excel, scheduling, vendor coordination, SAP.",
+ "output": [
+  "# Match summary",
+  "| Scheduling | Schedules for 12 staff | Strong",
+  "| Vendor coordination | Supplier orders | Partial",
+  "| Excel | Not in resume | Missing",
+  "| SAP | Not in resume | Missing",
+  "",
+  "# Tailored bullets",
+  "- Built weekly schedules for a team of 12 across [add number] shifts",
+  "- Coordinated stock orders with suppliers to keep inventory on target",
+  "- Reconciled daily cash and sales reports",
+  "",
+  "# Gaps and suggestions",
+  "- SAP: not added. Name any stock system you used, or take a short SAP intro course."
+ ]
+}
