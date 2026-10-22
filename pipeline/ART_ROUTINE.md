@@ -30,8 +30,15 @@ D. If a queued job is more than 8 days old with no drop, say "the ComfyUI PC has
 E. Promo for each bundle published this run, as in skill step 5 (promo file, then one
    Typefully X/Threads post for this run's bundles). Say what the files are and that they
    are AI-made. Copy dist/<slug>-cover.png next to the promo file for the user's posts.
+   Pinterest: call Metricool getBrandSettings; if a brand has Pinterest connected, schedule one
+   pin per bundle with createScheduledPost (providers pinterest, pinterestData boardId
+   "Thai Clip Art", pinTitle = listing title, pinLink = the Gumroad URL, media = the
+   "preview_url" that art_publish.py printed, text = the hook line plus "AI-made, commercial
+   use", date = next day 19:00 Asia/Bangkok). No Pinterest connected: skip and say so once.
 F. Commit art/, pipeline/catalog.md and promo/ and push to main. If every drop on art-drop is
    now in catalog.md, delete the branch (`git push origin --delete art-drop`); the PC runner
    starts a fresh one.
 G. Run skill step 7 (stats), then report in one short message: bundles published (links),
-   jobs queued for the PC, PC status from D, and the stats table.
+   pins scheduled, jobs queued for the PC, PC status from D, and the stats table. Add that the
+   Etsy and Adobe Stock upload kits for the new bundles appear within a few hours in Google
+   Drive > outputs > thai-art > <slug> > kits (the PC builds them; see art/CHANNELS.md).

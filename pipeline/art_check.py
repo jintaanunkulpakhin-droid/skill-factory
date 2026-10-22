@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Automatic gate for one art drop. Usage: art_check.py <slug> [drop_dir]
 
-Flags images that are unreadable, the wrong size, nearly blank, or near
+Flags images that are unreadable, the wrong size, nearly blank, colour noise, or near
 duplicates of an earlier image (16x16 average hash). Appends flagged names to
 art/<slug>/rejects.txt and prints how many remain. FAIL if fewer than
 job["min_keep"] (default 12) are left. The visual review in ROUTINE_PROMPT.md
@@ -19,7 +19,8 @@ def ahash(img):
 
 def main():
     slug = sys.argv[1]
-    drop = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else ".art-drop") / "drops" / slug
+    drop = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else ".art-drop")
+    drop = drop / "drops" / slug if (drop / "drops" / slug).is_dir() else drop  # or the image folder itself
     job = json.loads(pathlib.Path(f"art/{slug}/job.json").read_text(encoding="utf-8"))
     rej_file = pathlib.Path(f"art/{slug}/rejects.txt")
     rejects = set(rej_file.read_text().split()) if rej_file.exists() else set()
@@ -37,6 +38,9 @@ def main():
             flagged.append((p.stem, f"size {img.size}")); continue
         if max(ImageStat.Stat(img.convert("L")).stddev) < 8:
             flagged.append((p.stem, "blank")); continue
+        a = np.asarray(img.convert("RGB"), dtype=float)
+        if np.abs(np.diff(a, axis=1)).mean() > 45:  # AMD/ROCm colour noise on the PC
+            flagged.append((p.stem, "noise")); continue
         h = ahash(img)
         if any(bin(h ^ o).count("1") <= 12 for o in seen):
             flagged.append((p.stem, "duplicate")); continue

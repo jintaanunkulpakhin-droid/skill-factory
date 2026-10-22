@@ -5,5 +5,5 @@ comfy_url = http://127.0.0.1:8188
 checkpoint = sd_xl_base_1.0.safetensors
 # API-format workflow in this folder; keep the %PROMPT% style placeholders
 workflow = workflow_sdxl_api.json
-# Your Google Drive folder for finished images (leave empty to skip)
-drive_dir = G:\My Drive\ai-output
+# E:\AI\outputs syncs to Google Drive > Computers > My Computer > outputs
+drive_dir = E:\AI\outputs\thai-art

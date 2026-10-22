@@ -4,7 +4,7 @@ Run art_package.py <slug> first (dist/<slug>.zip, -cover.png, -thumb.png).
 
 Same upload flow as publish.py (shared helpers), but reads art/<slug>/LISTING.md
 and adds the art notes instead of the skill explainer.
-Prints JSON: id, url, published, files, note.
+Prints JSON: id, url, published, files, note, preview_url (public cover image, used for pins).
 """
 import html, json, pathlib, re, sys, urllib.parse, uuid
 
@@ -48,7 +48,8 @@ def main():
         note = res.get("message") if not res.get("success", True) else None
     prod = P.call("GET", path)["product"]
     print(json.dumps({"id": pid, "url": prod.get("short_url"), "published": prod.get("published"),
-                      "files": len(prod.get("files") or []), "note": note}))
+                      "files": len(prod.get("files") or []), "note": note,
+                      "preview_url": prod.get("preview_url")}))
 
 
 if __name__ == "__main__":

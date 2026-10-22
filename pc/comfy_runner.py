@@ -90,6 +90,25 @@ def pending_jobs():
             yield slug, json.loads(git("show", f"origin/main:{path}"))
 
 
+def kits():
+    """After a bundle is live, build the Etsy and Adobe Stock kits into the Drive folder."""
+    if not DRIVE_DIR:
+        return
+    catalog = git("show", "origin/main:pipeline/catalog.md")
+    live = {row.split("|")[2].strip() for row in catalog.splitlines()
+            if row.count("|") > 3 and " live " in row}
+    for slug in sorted(live):
+        src = DRIVE_DIR / slug
+        if not (src / "DONE").exists() or (src / "kits" / "DONE").exists():
+            continue
+        for script in ("art_package.py", "art_kits.py"):
+            subprocess.run([sys.executable, f"pipeline/{script}", slug, str(src)], cwd=REPO, check=True)
+        for kind in ("etsy", "adobe"):
+            shutil.copytree(REPO / "dist" / f"{slug}-{kind}", src / "kits" / kind, dirs_exist_ok=True)
+        (src / "kits" / "DONE").write_text(time.strftime("%Y-%m-%d %H:%M\n"), encoding="utf-8")
+        print("kits", slug, flush=True)
+
+
 def run_once():
     prepare_drop()
     for slug, job in pending_jobs():
@@ -108,6 +127,7 @@ def run_once():
         git("commit", "-q", "-m", f"Drop {slug}", cwd=DROP)
         git("push", "-q", "origin", "HEAD:art-drop", cwd=DROP)
         print("pushed", slug, flush=True)
+    kits()
 
 
 if __name__ == "__main__":
@@ -115,9 +135,11 @@ if __name__ == "__main__":
     if lock.exists() and time.time() - lock.stat().st_mtime < 6 * 3600:
         sys.exit("another run is in progress")
     try:
-        comfy("/system_stats")
+        queue = comfy("/queue")
     except Exception as e:
         sys.exit(f"ComfyUI not reachable at {COMFY}: {e}")
+    if queue.get("queue_running") or queue.get("queue_pending"):
+        sys.exit("ComfyUI is busy with another job; trying again next hour")  # one GPU, one job
     lock.touch()
     try:
         run_once()

@@ -83,7 +83,8 @@ def preview(images, size, title):
 
 def main():
     slug = sys.argv[1]
-    drop = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else ".art-drop") / "drops" / slug
+    drop = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else ".art-drop")
+    drop = drop / "drops" / slug if (drop / "drops" / slug).is_dir() else drop  # or the image folder itself
     job = json.loads(pathlib.Path(f"art/{slug}/job.json").read_text(encoding="utf-8"))
     text = pathlib.Path(f"art/{slug}/LISTING.md").read_text(encoding="utf-8")
     title = dict(re.findall(r"^(\w+):\s*(.*)$", text, re.M))["title"]
