@@ -1,0 +1,60 @@
+{
+  "slug": "recipe-cards-pilot",
+  "kind": "clipart",
+  "width": 1024,
+  "height": 1024,
+  "per_prompt": 1,
+  "min_keep": 1,
+  "negative": "text, letters, words, watermark, signature, logo, flag, photo, realistic, 3d render, hands, people, chopsticks crossing plate edge, blurry, cropped",
+  "note": "Temporary job for the recipe-cards thread; not a product. Remove before merging PR #2.",
+  "prompts": [
+    {
+      "name": "01",
+      "prompt": "hand-drawn flat vector illustration, pad thai stir-fried rice noodles with pink shrimp, bean sprouts, green onion, crushed peanuts and a lime wedge, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "02",
+      "prompt": "hand-drawn flat vector illustration, Thai green curry with chicken slices, round green Thai eggplants, red chili slices and basil leaves in a bowl, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "03",
+      "prompt": "hand-drawn flat vector illustration, tom yum soup with whole pink shrimp, mushrooms, red chilies, lemongrass and lime leaves in a bowl, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "04",
+      "prompt": "hand-drawn flat vector illustration, tom kha creamy white coconut soup with chicken, mushrooms, galangal slices, red chili and cilantro in a bowl, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "05",
+      "prompt": "hand-drawn flat vector illustration, pad kra pao minced pork with holy basil over white rice topped with a crispy fried egg, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "06",
+      "prompt": "hand-drawn flat vector illustration, massaman curry with beef chunks, potatoes, onion and peanuts in a golden brown sauce in a bowl, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "07",
+      "prompt": "hand-drawn flat vector illustration, som tam shredded green papaya salad with cherry tomatoes, green beans, peanuts and red chilies on a plate, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "08",
+      "prompt": "hand-drawn flat vector illustration, larb minced chicken salad with mint leaves, sliced shallots and lettuce leaves on a plate, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "09",
+      "prompt": "hand-drawn flat vector illustration, Thai fried rice with chicken, egg, tomato wedges, cucumber slices and a lime wedge on a plate, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "10",
+      "prompt": "hand-drawn flat vector illustration, pad see ew wide flat brown rice noodles with chinese broccoli, egg and chicken on a plate, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "11",
+      "prompt": "hand-drawn flat vector illustration, panang curry thick orange-red sauce with chicken, finely shredded lime leaves and red chili in a bowl, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    },
+    {
+      "name": "12",
+      "prompt": "hand-drawn flat vector illustration, mango sticky rice with sliced yellow mango, white sticky rice, coconut cream drizzle and sesame seeds on a plate, three-quarter top view, bold dark brown outlines, bright cheerful saturated colors, simple cel shading, centered, isolated on plain white background, food clip art"
+    }
+  ]
+}
