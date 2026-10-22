@@ -23,6 +23,7 @@ WORKFLOW = HERE / S.get("workflow", "workflow_sdxl_api.json")
 DRIVE_DIR = pathlib.Path(S["drive_dir"]) if S.get("drive_dir") else None
 BRANCH = S.get("jobs_branch", "main")  # where jobs and the catalog are read from
 DROP = REPO / ".art-drop"  # separate worktree for the art-drop branch
+STAGE = REPO / ".art-staging"  # images of jobs not finished yet
 
 
 def git(*args, cwd=REPO, check=True):
@@ -47,7 +48,14 @@ def fill(node, values):
     return node
 
 
+def queue_busy():
+    q = comfy("/queue")
+    return bool(q.get("queue_running") or q.get("queue_pending"))
+
+
 def render(job, item):
+    if queue_busy():  # rule: check the queue before every job; another session may be using the GPU
+        sys.exit("ComfyUI queue is busy; stopping, the next hourly run picks up where this left off")
     values = {"%PROMPT%": item["prompt"], "%NEGATIVE%": job.get("negative", ""),
               "%SEED%": random.randint(1, 2**31), "%CKPT%": CKPT,
               "%WIDTH%": job.get("width", 1024), "%HEIGHT%": job.get("height", 1024)}
@@ -114,20 +122,23 @@ def kits():
 def run_once():
     prepare_drop()
     for slug, job in pending_jobs():
-        out = DROP / "drops" / slug
-        out.mkdir(parents=True, exist_ok=True)
+        stage = STAGE / slug  # survives an interrupted run, so the next run resumes
+        stage.mkdir(parents=True, exist_ok=True)
         for item in job["prompts"]:
             for n in range(job.get("per_prompt", 1)):
-                path = out / f"{item['name']}-{n + 1}.png"
+                path = stage / f"{item['name']}-{n + 1}.png"
                 if not path.exists():
                     print("render", path.name, flush=True)
                     path.write_bytes(render(job, item))
+        out = DROP / "drops" / slug
+        shutil.copytree(stage, out, dirs_exist_ok=True)
         (out / "DONE").write_text(time.strftime("%Y-%m-%d %H:%M") + f" {CKPT}\n", encoding="utf-8")
         if DRIVE_DIR:
             shutil.copytree(out, DRIVE_DIR / slug, dirs_exist_ok=True)
         git("add", "-A", cwd=DROP)
         git("commit", "-q", "-m", f"Drop {slug}", cwd=DROP)
         git("push", "-q", "origin", "HEAD:art-drop", cwd=DROP)
+        shutil.rmtree(stage)
         print("pushed", slug, flush=True)
     kits()
 
@@ -137,10 +148,10 @@ if __name__ == "__main__":
     if lock.exists() and time.time() - lock.stat().st_mtime < 6 * 3600:
         sys.exit("another run is in progress")
     try:
-        queue = comfy("/queue")
+        busy = queue_busy()
     except Exception as e:
         sys.exit(f"ComfyUI not reachable at {COMFY}: {e}")
-    if queue.get("queue_running") or queue.get("queue_pending"):
+    if busy:
         sys.exit("ComfyUI is busy with another job; trying again next hour")  # one GPU, one job
     lock.touch()
     try:
