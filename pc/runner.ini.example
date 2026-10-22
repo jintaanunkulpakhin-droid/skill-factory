@@ -7,3 +7,5 @@ checkpoint = sd_xl_base_1.0.safetensors
 workflow = workflow_sdxl_api.json
 # E:\AI\outputs syncs to Google Drive > Computers > My Computer > outputs
 drive_dir = E:\AI\outputs\thai-art
+# Branch the jobs come from (main; a PR branch only for testing)
+jobs_branch = main

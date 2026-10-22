@@ -21,6 +21,7 @@ COMFY = S.get("comfy_url", "http://127.0.0.1:8188").rstrip("/")
 CKPT = S.get("checkpoint", "sd_xl_base_1.0.safetensors")
 WORKFLOW = HERE / S.get("workflow", "workflow_sdxl_api.json")
 DRIVE_DIR = pathlib.Path(S["drive_dir"]) if S.get("drive_dir") else None
+BRANCH = S.get("jobs_branch", "main")  # where jobs and the catalog are read from
 DROP = REPO / ".art-drop"  # separate worktree for the art-drop branch
 
 
@@ -67,7 +68,8 @@ def render(job, item):
 
 def prepare_drop():
     """Fresh worktree of art-drop; an orphan branch when the cloud run has deleted it."""
-    git("pull", "-q", "--ff-only", "origin", "main", check=False)  # keep this script current
+    git("pull", "-q", "--ff-only", "origin", BRANCH, check=False)  # keep this script current
+    git("fetch", "-q", "origin", BRANCH)
     remote = git("ls-remote", "--heads", "origin", "art-drop").strip()
     if DROP.exists():
         git("worktree", "remove", "--force", str(DROP))
@@ -83,18 +85,18 @@ def prepare_drop():
 
 
 def pending_jobs():
-    names = git("ls-tree", "-r", "--name-only", "origin/main", "art").splitlines()
+    names = git("ls-tree", "-r", "--name-only", f"origin/{BRANCH}", "art").splitlines()
     for path in sorted(n for n in names if n.endswith("/job.json")):
         slug = path.split("/")[1]
         if not (DROP / "drops" / slug / "DONE").exists():
-            yield slug, json.loads(git("show", f"origin/main:{path}"))
+            yield slug, json.loads(git("show", f"origin/{BRANCH}:{path}"))
 
 
 def kits():
     """After a bundle is live, build the Etsy, Adobe Stock and Dreamstime kits into the Drive folder."""
     if not DRIVE_DIR:
         return
-    catalog = git("show", "origin/main:pipeline/catalog.md")
+    catalog = git("show", f"origin/{BRANCH}:pipeline/catalog.md")
     live = {row.split("|")[2].strip() for row in catalog.splitlines()
             if row.count("|") > 3 and " live " in row}
     for slug in sorted(live):
