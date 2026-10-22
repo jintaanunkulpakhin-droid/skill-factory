@@ -1,2 +1,5 @@
 dist/
 __pycache__/
+.art-drop/
+pc/runner.ini
+pc/runner.lock
