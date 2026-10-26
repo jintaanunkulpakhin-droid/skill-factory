@@ -4,8 +4,8 @@
 - [x] resume-tailor: tailor a resume and cover letter to a pasted job ad
 - [x] weekly-report-writer: turn bullet updates into a manager-ready weekly report
 - [x] sop-builder: turn a rough process description into a step-by-step SOP
-- [ ] product-description-writer: e-commerce product copy from specs
-- [ ] social-post-repurposer: one article into posts for 4 platforms
+- [x] product-description-writer: e-commerce product copy from specs
+- [x] social-post-repurposer: one article into posts for 4 platforms
 - [ ] customer-complaint-responder: calm, policy-aware replies to complaints
 - [ ] invoice-and-quote-writer: clean quotes and invoices for freelancers
 - [ ] study-guide-maker: turn lecture notes into a study guide and quiz
