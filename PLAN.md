@@ -35,3 +35,11 @@ Price band: $7 to $15 each, plus a monthly bundle.
 - A Gumroad access token, added as an environment secret.
 - Approval of the weekly routine.
 After that, no decisions are needed week to week.
+
+## Art mode (from 2026-10-22)
+The user replaced new skills with Thai-style digital art (clip art and pattern
+bundles, $7 to $9, on Gumroad; Etsy later once Payoneer is verified). Images are
+rendered on the user's own ComfyUI PC: the weekly run queues `art/<slug>/job.json`,
+`pc/comfy_runner.py` on that PC renders and pushes to the `art-drop` branch (and
+Google Drive), and the next weekly run checks, packages and publishes. See
+`pipeline/ART_ROUTINE.md`, `art/STYLE.md` and `pc/SETUP.md`. The 4 skills stay on sale.

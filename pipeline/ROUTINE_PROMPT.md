@@ -10,3 +10,7 @@ Repo: skill-factory. Read PLAN.md, pipeline/backlog.md, pipeline/rubric.md, pipe
 6. Mark the topics [x] in backlog.md, append rows to catalog.md, commit and push to main.
 7. Run `python3 pipeline/stats.py` for the sales table (the API has no page views).
 8. Report in one short message: the two product links, a link to the promo file, when the X/Threads post is scheduled, and the stats table.
+
+ART MODE (from 2026-10-22, the user chose to replace new skills with Thai-style art):
+do step 0 (and 0b if present) above, then follow pipeline/ART_ROUTINE.md instead of
+steps 1 to 6 and 8. No new skills are written. The live skills stay on sale and stay in stats.

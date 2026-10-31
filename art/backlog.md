@@ -1,0 +1,15 @@
+# Art theme backlog. [x] = used. Seasonal themes go 3 to 6 weeks before the date.
+- [x] loy-krathong-clipart (clipart): krathongs, lanterns, lotus, candles, river scenes (Loy Krathong, late Nov)
+- [ ] thai-new-year-clipart (clipart): fireworks, gift baskets, lucky fruits, festive flowers (Dec 31 / Jan 1)
+- [ ] thai-street-food-clipart (clipart): pad thai, mango sticky rice, som tam, satay, Thai tea, food carts
+- [ ] kranok-gold-patterns (pattern): gold kranok flame motifs on red, black, teal
+- [ ] thai-fruit-clipart (clipart): mango, mangosteen, rambutan, durian, coconut, dragon fruit
+- [ ] thai-flower-clipart (clipart): lotus, jasmine garland, orchid, frangipani, marigold
+- [ ] benjarong-patterns (pattern): benjarong ceramic-style floral patterns in five colours
+- [ ] thai-elephant-clipart (clipart): cute elephants with flowers, umbrellas, garlands
+- [ ] thai-transport-clipart (clipart): tuk-tuk, long-tail boat, songthaew, bicycle with basket
+- [ ] pha-sin-textile-patterns (pattern): woven northern Thai textile stripe patterns
+- [ ] chinese-new-year-thai-clipart (clipart): lanterns, oranges, red envelopes, firecrackers (Feb)
+- [ ] songkran-clipart (clipart): water bowls, water guns, flower shirts, jasmine, splashes (Apr 13-15)
+- [ ] floating-market-clipart (clipart): boats with fruit, vendors' hats, canals, wooden houses
+- [ ] thai-wedding-clipart (clipart): garlands, ceremonial bowls, flower arrangements (no people)
