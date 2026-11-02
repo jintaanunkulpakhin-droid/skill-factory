@@ -6,8 +6,8 @@
 - [x] sop-builder: turn a rough process description into a step-by-step SOP
 - [x] product-description-writer: e-commerce product copy from specs
 - [x] social-post-repurposer: one article into posts for 4 platforms
-- [ ] customer-complaint-responder: calm, policy-aware replies to complaints
-- [ ] invoice-and-quote-writer: clean quotes and invoices for freelancers
+- [x] customer-complaint-responder: calm, policy-aware replies to complaints
+- [x] invoice-and-quote-writer: clean quotes and invoices for freelancers
 - [ ] study-guide-maker: turn lecture notes into a study guide and quiz
 - [ ] proposal-writer: client project proposal from a short brief
 - [ ] presentation-outliner: talk outline and speaker notes from a topic
