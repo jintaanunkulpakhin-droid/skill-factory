@@ -8,8 +8,8 @@
 - [x] social-post-repurposer: one article into posts for 4 platforms
 - [x] customer-complaint-responder: calm, policy-aware replies to complaints
 - [x] invoice-and-quote-writer: clean quotes and invoices for freelancers
-- [ ] study-guide-maker: turn lecture notes into a study guide and quiz
-- [ ] proposal-writer: client project proposal from a short brief
+- [x] study-guide-maker: turn lecture notes into a study guide and quiz
+- [x] proposal-writer: client project proposal from a short brief
 - [ ] presentation-outliner: talk outline and speaker notes from a topic
 - [ ] budget-planner: monthly personal budget from a list of expenses
 - [ ] job-interview-coach: likely questions and STAR answers for a role

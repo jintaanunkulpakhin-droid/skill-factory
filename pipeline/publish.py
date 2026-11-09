@@ -87,6 +87,9 @@ def main():
     slug = sys.argv[1]
     pid = sys.argv[sys.argv.index("--product-id") + 1] if "--product-id" in sys.argv else None
     name, price, desc, tags = listing(slug)
+    for f in (f"dist/{slug}.zip", f"dist/{slug}-cover.png", f"dist/{slug}-thumb.png"):
+        if not pathlib.Path(f).exists():
+            sys.exit(f"missing {f}: build the zip and images before publishing")
     if not pid:
         pid = call("POST", "/products", form={"name": name, "price": price, "description": desc})["product"]["id"]
     file_url = upload(pathlib.Path(f"dist/{slug}.zip"))

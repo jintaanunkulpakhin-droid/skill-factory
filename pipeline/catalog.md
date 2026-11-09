@@ -9,3 +9,5 @@
 | 2026-10-26 | social-post-repurposer | live BZd70IPmKeUROiM-bai0CQ== | https://jintaanun.gumroad.com/l/urtxm |
 | 2026-11-02 | customer-complaint-responder | live aOO9ZX-qQZv_0CFMlI0aVg== | https://jintaanun.gumroad.com/l/ogkujp |
 | 2026-11-02 | invoice-and-quote-writer | live nccEaVEz3_UIPC_6LjbBqg== | https://jintaanun.gumroad.com/l/pkoycf |
+| 2026-11-09 | study-guide-maker | live WLRdGk1xwR_eitsD7_s8Qw== | https://jintaanun.gumroad.com/l/pdobc |
+| 2026-11-09 | proposal-writer | live aGiiv3neN87v-oV_FUxBlw== | https://jintaanun.gumroad.com/l/chgpfe |
