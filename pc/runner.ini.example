@@ -1,0 +1,11 @@
+[runner]
+# ComfyUI on this same PC (DESKTOP-FOHQGAD, ComfyUI in E:\AI)
+comfy_url = http://127.0.0.1:8188
+# File name exactly as shown in ComfyUI's checkpoint list
+checkpoint = sd_xl_base_1.0.safetensors
+# API-format workflow in this folder; keep the %PROMPT% style placeholders
+workflow = workflow_sdxl_api.json
+# E:\AI\outputs syncs to Google Drive > Computers > My Computer > outputs
+drive_dir = E:\AI\outputs\thai-art
+# Branch the jobs come from (main; a PR branch only for testing)
+jobs_branch = main

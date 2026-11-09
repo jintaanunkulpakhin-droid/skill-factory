@@ -1,0 +1,67 @@
+{
+  "slug": "loy-krathong-clipart",
+  "kind": "clipart",
+  "width": 1024,
+  "height": 1024,
+  "per_prompt": 2,
+  "min_keep": 16,
+  "negative": "text, letters, watermark, signature, logo, frame, border, photo, realistic, blurry, extra fingers, deformed hands, cropped, buddha, monk, king, queen, royal, crown, temple interior, flag",
+  "prompts": [
+    {
+      "name": "krathong-banana-leaf",
+      "prompt": "a traditional krathong float made of folded banana leaves with pink lotus flowers, a lit candle and three incense sticks, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "krathong-lotus",
+      "prompt": "a krathong shaped like a pink lotus flower with a small glowing candle in the middle, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "krathong-bread",
+      "prompt": "a round eco-friendly krathong made of bread decorated with marigold and orchid flowers and a candle, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "krathong-on-water",
+      "prompt": "a decorated krathong floating on gentle blue water ripples with reflected candle light, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "sky-lantern",
+      "prompt": "a glowing paper sky lantern (khom loi) floating upward, warm orange light, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "lanterns-trio",
+      "prompt": "three glowing paper sky lanterns of different sizes floating together, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "hanging-lanterns",
+      "prompt": "a string of hanging northern Thai paper lanterns (khom fai) in red, yellow and white, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "lotus-flower",
+      "prompt": "a single pink lotus flower in full bloom with two green lotus leaves, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "marigold-garland",
+      "prompt": "a round garland of orange marigold flowers and white jasmine, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "candle-incense",
+      "prompt": "a lit candle with three incense sticks pushed into a small floral base, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "full-moon-river",
+      "prompt": "a big full moon over a calm river with small glowing krathongs floating, simple rounded shapes, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "lantern-moon",
+      "prompt": "a glowing sky lantern in front of a big pale full moon, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "banana-leaf-fold",
+      "prompt": "folded green banana leaf decorations in a pointed petal pattern, arranged in a circle, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    },
+    {
+      "name": "fireworks-small",
+      "prompt": "small gold and pink fireworks burst, simple stylized sparkles, flat vector illustration, clean bold outlines, soft pastel and gold palette, isolated on plain white background, no text, no shadow, centered"
+    }
+  ]
+}
