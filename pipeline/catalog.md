@@ -11,3 +11,5 @@
 | 2026-11-02 | invoice-and-quote-writer | live nccEaVEz3_UIPC_6LjbBqg== | https://jintaanun.gumroad.com/l/pkoycf |
 | 2026-11-09 | study-guide-maker | live WLRdGk1xwR_eitsD7_s8Qw== | https://jintaanun.gumroad.com/l/pdobc |
 | 2026-11-09 | proposal-writer | live aGiiv3neN87v-oV_FUxBlw== | https://jintaanun.gumroad.com/l/chgpfe |
+| 2026-11-16 | presentation-outliner | live hgjtR0J8GqpHdVZLcnOYew== | https://jintaanun.gumroad.com/l/cwhre |
+| 2026-11-16 | budget-planner | live cDTqS0mKJj2iCT_w3GBE5w== | https://jintaanun.gumroad.com/l/kixbda |

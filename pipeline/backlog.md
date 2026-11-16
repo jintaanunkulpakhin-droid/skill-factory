@@ -10,8 +10,8 @@
 - [x] invoice-and-quote-writer: clean quotes and invoices for freelancers
 - [x] study-guide-maker: turn lecture notes into a study guide and quiz
 - [x] proposal-writer: client project proposal from a short brief
-- [ ] presentation-outliner: talk outline and speaker notes from a topic
-- [ ] budget-planner: monthly personal budget from a list of expenses
+- [x] presentation-outliner: talk outline and speaker notes from a topic
+- [x] budget-planner: monthly personal budget from a list of expenses
 - [ ] job-interview-coach: likely questions and STAR answers for a role
 - [ ] contract-plain-english: explain a contract clause by clause (not legal advice)
 - [ ] travel-itinerary-planner: day-by-day plan from dates, budget, interests
